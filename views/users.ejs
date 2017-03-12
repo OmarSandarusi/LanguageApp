@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Page</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <h1>Users</h1>
+    <p><%= typeof getMessage === 'undefined' ? "" : getMessage %></p>
+    <ul>
+    <% for (var i = 0; i < users.length; i++) { %>
+        <li>
+            <p><%= users[i].userName + ' (' + users[i].firstName + ' ' + users[i].lastName + ')' %></p>
+        </li>
+    <% } %>
+    </ul>
+    <br/>
+    <h2>Create New User</h2>
+    <div id="createBox" name="createBox" class="boxBorder">
+        <label>Username</label>
+        <input id="userName" name="userName" type="text"/>
+        <label>First Name</label>
+        <input id="firstName" name="firstName" type="text"/>
+        <label>Last Name</label>
+        <input id="lastName" name="lastName" type="text"/>
+        <br/><br/>
+        <button id="submitButton" name="submitButton" type="button" onclick="onSubmit()">Create</button>
+        <p id="createMessage"></p>
+    </div>
+
+    <script type="text/javascript">
+        function onSubmit() {
+            var userName = $('#userName').val();
+            var firstName = $('#firstName').val();
+            var lastName = $('#lastName').val();
+            $.ajax({
+               type: "POST",
+               url: "/users/create",
+               data: {
+                   userName: userName,
+                   firstName: firstName,
+                   lastName: lastName
+               },
+               datatype: "json" 
+            }).then(function(data){
+                console.log('ajax success');
+                console.log(data);
+                console.dir(data);
+                $('#createMessage').val(data.createMessage);
+            }, function(err) {
+                console.log('onSubmit() ajax failure');
+                console.dir(err);
+                $('#createMessage').val('Error');
+            });
+        }
+    </script>
+  </body>
+</html>
