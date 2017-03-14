@@ -5,8 +5,10 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="/javascripts/facebookSDK.js"></script>
   </head>
   <body>
+    <div class="fb-login-button" onlogin="onLogin();" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>
     <h1>Users</h1>
     <p><%= typeof getMessage === 'undefined' ? "" : getMessage %></p>
     <ul>
@@ -46,14 +48,17 @@
                datatype: "json" 
             }).then(function(data){
                 console.log('ajax success');
-                console.log(data);
                 console.dir(data);
-                $('#createMessage').val(data.createMessage);
+                $('#createMessage').text(data.createMessage);
             }, function(err) {
                 console.log('onSubmit() ajax failure');
                 console.dir(err);
-                $('#createMessage').val('Error');
+                $('#createMessage').text('Error');
             });
+        }
+
+        function onLogin() {
+            console.log("login----");
         }
     </script>
   </body>
