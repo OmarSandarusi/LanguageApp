@@ -1,16 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/languageApp');
-var userSchema = mongoose.Schema({
-    userName: String,
-    firstName: String,
-    lastName: String
-});
-
-var User = mongoose.model("User", userSchema);
-
 /* GET users listing. */
 router.get('/', function(reqest, response, next) {
     User.find(function(err, result){
