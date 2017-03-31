@@ -1,9 +1,13 @@
-<% include partials/head %>
-  
-  <% if (user.facebook.id != null) { %>  
-    <h2 class="fa fa-facebook"> Facebook</h2><br>
-    <strong>id</strong>: <%= user.facebook.id %><br>
-    <strong>email</strong>: <%= user.facebook.email %><br>
-    <strong>name</strong>: <%= user.facebook.name %>
-  <% } %>
+<% var title = 'Profile' %>
+
+<html>
+    <head>
+        <title><%= title %></title>
+    </head>  
+    <% if (user.facebook.id != null) { %>  
+        <h2 class="fa fa-facebook"> Facebook</h2><br>
+        <strong>id</strong>: <%= user.facebook.id %><br>
+        <strong>email</strong>: <%= user.facebook.email %><br>
+        <strong>name</strong>: <%= user.facebook.name %>
+    <% } %>
 </html>

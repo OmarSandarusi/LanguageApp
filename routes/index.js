@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
+var authMethods = require('../public/javascripts/authMethods');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -16,6 +17,11 @@ router.get('/auth/facebook/callback', passport.authenticate('facebook', {
 
 router.get('/loginFailed', function(req, res) {
   res.render('loginFailed');
+});
+
+router.get('/time', authMethods.ensureAuthenticated, function (req, res, next) {
+    var currentTime = new Date();
+    res.render('time', { title: 'Time', currentTime: currentTime.toISOString() });
 });
 
 module.exports = router;

@@ -1,3 +1,4 @@
+/*--Not used, archived
 window.fbAsyncInit = function() {
 FB.init({
     appId      : '1884909448422712',
@@ -13,4 +14,4 @@ FB.AppEvents.logPageView();
     js = d.createElement(s); js.id = id;
     js.src = "//connect.facebook.net/en_US/sdk.js";
     fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
+}(document, 'script', 'facebook-jssdk'));*/

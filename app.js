@@ -12,8 +12,7 @@ var mongoose = require('mongoose');
 var session = require('express-session');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
-var time = require('./routes/time');
+//var users = require('./routes/users');
 var profile = require('./routes/profile.js');
 
 var app = express();
@@ -37,8 +36,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', index);
-app.use('/users', users);
-app.use('/time', time);
+//app.use('/users', users);
 app.use('/profile', profile);
 
 require('./config/passport')(passport);
