@@ -1,7 +1,9 @@
-<% if (user.facebook.id != null) { %>  
-  <h2 class="fa fa-facebook"> Facebook</h2><br>
-  <img src="https://avatars.io/gravatar/<%= user.facebook.email %>/140" class="img-circle"><br>
-  <strong>id</strong>: <%= user.facebook.id %><br>
-  <strong>email</strong>: <%= user.facebook.email %><br>
-  <strong>name</strong>: <%= user.facebook.name %>
-<% } %>
+<% include partials/head %>
+  
+  <% if (user.facebook.id != null) { %>  
+    <h2 class="fa fa-facebook"> Facebook</h2><br>
+    <strong>id</strong>: <%= user.facebook.id %><br>
+    <strong>email</strong>: <%= user.facebook.email %><br>
+    <strong>name</strong>: <%= user.facebook.name %>
+  <% } %>
+</html>
