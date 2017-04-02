@@ -1,0 +1,78 @@
+.word {
+		display: inline;
+	}
+.word-selected{
+    font-weight: bold;
+}
+
+#my-navbar{
+    background: tomato;
+    border-color: lightgrey;
+
+}
+
+#banner{
+    color: white;
+}
+
+body{
+    background: lightgrey;
+	padding-top: 55px; /*50px for the height of the navbar + 37px for the offset*/
+	padding-bottom: 25px; /*50px for the height of the bottom navbar*/
+}
+
+#HelpWindow{
+    background: white;
+    height: 100%;
+    width: 50%;
+    float: left;
+    padding: 10px;
+    border: 10px;
+    margin: 10px;
+
+}
+
+#ConvoWindow{
+    background: white;
+    height: 100%;
+    width: 30%;
+    float: left;
+    padding: 10px;
+    border: 10px;
+    margin: 10px;
+}
+
+#HistWindow{
+    background: white;
+    height: 100%;
+    width: 12.5%;
+    float: left;
+    margin: 10px;
+}
+
+html, body {
+  height: 100%; /*Fixes the height to 100% of the viewport*/
+}
+
+.panel{
+    margin: 5px;
+}
+
+#loginContainer{
+    background: white;
+    text-align: center;
+    height: 100vh;
+    width: 70vw;
+}
+
+.input-group-btn{
+    text-align: center;
+}
+
+#loginBtn{
+    background: tomato;
+    color: white;
+    margin: 10px;
+    
+}
+

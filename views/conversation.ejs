@@ -1,0 +1,16 @@
+<%# views/conversation.ejs %>
+ 
+<% extend('template') %>
+<div class="container" id="HelpWindow">
+	<div class="input-group">
+		<input type="text" class="form-control" id="query" placeholder="What would you like to say?">
+		<span class="input-group-btn">
+			<button class="btn btn-default" type="button" onclick="googTranslate()">Translate</button>
+		</span>
+		</div><!-- /input-group -->
+	<div class='transTextContainer'></div>
+</div>
+
+<div class="container" id="ConvoWindow"></div>
+<div class="container" id="HistWindow"></div>
+

@@ -1,0 +1,18 @@
+.jumbotron{
+    background: tomato;
+    height: 100vh;
+    width: 100vw;
+    text-align: center; 
+    color: lightgray;
+}
+
+html body{
+    height: 100vh;
+}
+
+.btn{
+    background: tomato;
+    border-color: lightgray;
+    color: white;
+
+}
